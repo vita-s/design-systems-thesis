@@ -1,0 +1,32 @@
+.link {
+  color: $color-secondary-main;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.disable {
+  pointer-events: none;
+}
+
+.p-1-2 {
+  padding: 0.25rem 10px;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.make_me_work_then_delete {
+  border: 1px $color-error-main dashed;
+}
+
+.fadeout {
+  opacity: 0.5;
+}
+
+.clickable {
+  cursor: pointer;
+}

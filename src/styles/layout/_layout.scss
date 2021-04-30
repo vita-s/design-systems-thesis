@@ -1,0 +1,153 @@
+//TODO: These styles might (or not) affect Orcas. Move to Orcas (if it is the case) and remove file
+
+.dashboard {
+  width: 100%;
+
+  > .menu {
+    min-height: 100%;
+    width: $menu-full-width;
+    position: fixed;
+    z-index: 6;
+  }
+
+  > .wrapper {
+    background: $color-neutral-lightest;
+    min-height: 100vh;
+    transition-duration: 0.2s, 0.2s, 0.35s, 0.35s;
+    transition-property: top, bottom, width, margin;
+    transition-timing-function: linear, linear, ease, ease;
+    width: calc(100% - #{$menu-full-width});
+    float: right;
+
+    .header {
+      position: fixed;
+      width: calc(100% - #{$menu-full-width});
+      top: 0;
+      right: 0;
+      z-index: 5;
+    }
+
+    .footer {
+      position: fixed;
+      width: calc(100% - #{$menu-full-width});
+      bottom: 0;
+      right: 0;
+      z-index: 5;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .dashboard.menu-mini {
+    > .menu {
+      width: $menu-mini-width;
+    }
+
+    > .wrapper {
+      width: calc(100% - #{$menu-mini-width});
+
+      .header,
+      .footer {
+        width: calc(100% - #{$menu-mini-width});
+      }
+    }
+  }
+}
+
+.dashboard.filters-open {
+  > .wrapper {
+    width: calc(100% - #{$menu-full-width + $filters-width});
+    margin-right: $filters-width;
+
+    .header,
+    .footer {
+      position: fixed;
+      width: calc(100% - #{$menu-full-width + $filters-width});
+      right: $filters-width;
+    }
+  }
+}
+
+.dashboard.menu-mini.filters-open {
+  > .wrapper {
+    width: calc(100% - #{$menu-mini-width + $filters-width});
+    margin-right: $filters-width;
+
+    .header,
+    .footer {
+      position: fixed;
+      width: calc(100% - #{$menu-mini-width + $filters-width});
+      right: $filters-width;
+    }
+  }
+}
+
+.dashboard.sidebar-open {
+  > .wrapper {
+    width: calc(100% - #{$menu-full-width + $sidebar-width});
+    margin-right: $sidebar-width;
+
+    .header,
+    .footer {
+      position: fixed;
+      width: calc(100% - #{$menu-full-width + $sidebar-width});
+      right: $sidebar-width;
+    }
+  }
+}
+
+.dashboard.menu-mini.sidebar-open {
+  > .wrapper {
+    width: calc(100% - #{$menu-mini-width + $sidebar-width});
+    margin-right: $sidebar-width;
+
+    .header,
+    .footer {
+      position: fixed;
+      width: calc(100% - #{$menu-mini-width + $sidebar-width});
+      right: $sidebar-width;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .dashboard:not(.menu-mini) {
+    > .menu {
+      transform: translateX(0);
+    }
+  }
+
+  .dashboard {
+    width: 100%;
+
+    > .menu {
+      min-height: 100vh;
+      width: $menu-mobile-width;
+      position: absolute;
+      left: 0;
+      transform: translateX(-#{$menu-mobile-width-offset});
+      transition: transform 350ms ease;
+    }
+
+    .sidebar {
+      transform: translateX(#{$filters-mobile-width-offset});
+    }
+
+    > .wrapper {
+      width: 100% !important;
+      margin-right: 0 !important;
+      float: none;
+
+      .header,
+      .footer {
+        width: 100% !important;
+        right: 0 !important;
+      }
+    }
+  }
+}
+
+.main {
+  padding: ($header-height + 20px) 0 2rem;
+  transition: top 0.2s linear, bottom 0.2s linear, width 0.35s ease;
+}

@@ -1,0 +1,12 @@
+{
+  "extends": "../tsconfig",
+  "compilerOptions": {
+    "rootDir": "..",
+    "types": ["cypress"]
+  },
+  "typeAcquisition": {
+    "exclude": ["jest"]
+  },
+  "include": ["./**/*.ts"],
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig",
+  "compilerOptions": {
+    "declaration": true,
+    "noEmit": false,
+    "outDir": "../../lib/test"
+  },
+  "include": ["./**/*.ts"],
+  "exclude": [
+    "node_modules",
+    // exclude Cypress code because global typing collition with Jest.
+    // Cypress typing is check with a different configuration: /src/test-utils/cypress/tsconfig.json
+    // https://github.com/nrwl/nx/issues/816#issuecomment-439466382
+    "./cypress/**/*.ts"
+  ]
+}

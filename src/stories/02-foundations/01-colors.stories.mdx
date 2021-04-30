@@ -1,0 +1,79 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks'
+import sections from '../story-sections'
+
+<Meta title={`${sections.foundations}/Colors`} />
+
+# Colors
+
+These colors are also exposed via `src/styles/helpers/_variables.scss` and you can import them into your project via `@import '~plankton/dist/variables'`.
+
+<ColorPalette>
+  <ColorItem
+    title="Primary"
+    colors={{
+      'Primary lightest': '#FFF9F2',
+      'Primary lighter': '#FFE3C4',
+      'Primary light': '#FFBA69',
+      'Primary main': '#FF8300',
+      'Primary dark': '#C46400',
+      'Primary darker': '#884500',
+      'Primary darkest': '#4D2600'
+    }}
+  />
+  <ColorItem
+    title="Secondary"
+    colors={{
+      'Secondary lightest': '#F2F9FF',
+      'Secondary lighter': '#C9E6FF',
+      'Secondary light': '#78C2FF',
+      'Secondary main': '#1890FF',
+      'Secondary dark': '#0366C4',
+      'Secondary darker': '#004588',
+      'Secondary darkest': '#00264D'
+    }}
+  />
+  <ColorItem
+    title="Neutral"
+    colors={{
+      'Gray lightest': '#E8E8E8',
+      'Gray lighter': '#BFBFBF',
+      'Gray main': '#888888',
+      'Gray darker': '#707070',
+      'Gray darkest': '#4B4B4B'
+    }}
+  />
+  <ColorItem
+    title="Error"
+    colors={{
+      'Error lightest': '#FFF8F7',
+      'Error lighter': '#FBC9C5',
+      'Error light': '#F27468',
+      'Error main': '#DB1C0A',
+      'Error dark': '#AC180A',
+      'Error darker': '#7C180E',
+      'Error darkest': '#4D140F'
+    }}
+  />
+  <ColorItem
+    title="Success"
+    colors={{
+      'Success lightest': '#F7FFF8',
+      'Success lighter': '#CCF0CE',
+      'Success light': '#84D288',
+      'Success main': '#3EA644',
+      'Success dark': '#26882B',
+      'Success darker': '#186A1C',
+      'Success darkest': '#0F4D12'
+    }}
+  />
+  <ColorItem
+    title="Layout"
+    colors={{
+      'Background white': '#FFFFFF',
+      'Background gray': '#F5F5F5',
+      Divider: '#D8D8D8',
+      'Background blue': '#F6FAFC',
+      Shadow: '#4B4B4B 15% X:0 Y:2 Blur:8'
+    }}
+  />
+</ColorPalette>

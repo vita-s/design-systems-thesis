@@ -1,0 +1,31 @@
+.text-area-field {
+  .text-area-field__text-area {
+    border-radius: calc(3px + 1px);
+    border: 1px solid $color-layout-divider;
+    background-color: $color-layout-white;
+    color: $color-neutral-darkest;
+    width: inherit;
+    height: auto;
+    padding: 8px;
+    resize: none;
+
+    &:focus {
+      box-shadow: none;
+      border-color: $color-secondary-main;
+    }
+
+    &--disabled {
+      background-color: $color-neutral-lightest;
+      color: $color-neutral-main;
+    }
+
+    &--wrong-value {
+      border-color: $color-error-main;
+    }
+  }
+
+  &__legend {
+    margin-top: 4px;
+    color: $color-neutral-main;
+  }
+}

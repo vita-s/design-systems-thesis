@@ -1,0 +1,59 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks'
+import sections from '../story-sections'
+
+<Meta title={`${sections.foundations}/Layout`} />
+
+# Grid
+
+Hint: you can also use `span` like `span="15-20"`.
+
+## Desktop: 24 cells wide
+
+<Canvas>
+  <div class="plankton-grid">
+    <div class="plankton-cell" span="12" style={{ backgroundColor: 'grey' }}>
+      0-12
+    </div>
+    <div class="plankton-cell" span="2" style={{ backgroundColor: 'grey' }}>
+      13
+    </div>
+    <div class="plankton-cell" span="5" style={{ backgroundColor: 'grey' }}>
+      14-20
+    </div>
+    <div class="plankton-cell" span="4" style={{ backgroundColor: 'grey' }}>
+      21-23
+    </div>
+  </div>
+</Canvas>
+
+## Tablet: 12 cells wide
+
+<Canvas>
+  <div class="plankton-grid" columns="12">
+    <div class="plankton-cell" span="6" style={{ backgroundColor: 'grey' }}>
+      6
+    </div>
+    <div class="plankton-cell" span="3" style={{ backgroundColor: 'grey' }}>
+      3
+    </div>
+    <div class="plankton-cell" span="3" style={{ backgroundColor: 'grey' }}>
+      3
+    </div>
+  </div>
+</Canvas>
+
+## Mobile: 4 cells wide
+
+<Canvas>
+  <div class="plankton-grid" columns="4">
+    <div class="plankton-cell" span="1" style={{ backgroundColor: 'grey' }}>
+      1
+    </div>
+    <div class="plankton-cell" span="2" style={{ backgroundColor: 'grey' }}>
+      2
+    </div>
+    <div class="plankton-cell" span="1" style={{ backgroundColor: 'grey' }}>
+      1
+    </div>
+  </div>
+</Canvas>

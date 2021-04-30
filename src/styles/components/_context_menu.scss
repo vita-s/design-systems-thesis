@@ -1,0 +1,44 @@
+.context-menu {
+  cursor: pointer;
+
+  &__options.tooltip.popover {
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+    margin: 0;
+    outline: none;
+
+    .popover-inner.tooltip-inner {
+      padding: 0;
+      background-color: $color-layout-white;
+      color: $color-neutral-darkest;
+    }
+
+    .popover-arrow {
+      display: none;
+    }
+  }
+}
+
+.context-menu-item {
+  display: flex;
+  cursor: pointer;
+  padding: 13px 8px;
+  min-width: 160px;
+
+  &__icon {
+    margin-right: 10px;
+
+    .material-icons {
+      display: block;
+      font-size: 14px;
+      color: $color-neutral-lighter;
+    }
+  }
+
+  &__text {
+    text-align: left;
+  }
+
+  &:hover {
+    background-color: $color-neutral-lightest;
+  }
+}

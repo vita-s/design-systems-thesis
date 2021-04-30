@@ -1,0 +1,128 @@
+.button {
+  $icon-size: $button-line-height;
+
+  height: 40px;
+  min-width: 40px;
+  padding: $button-padding-default;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: top;
+  box-sizing: border-box;
+  border-radius: $button-border-radius;
+  border-width: $button-border-width;
+  border-style: solid;
+  outline: none !important;
+  text-transform: uppercase;
+  font-weight: normal;
+
+  &:disabled {
+    background-color: $color-neutral-lightest;
+    border-color: $color-neutral-lightest;
+    color: $color-neutral-main;
+
+    .button__icon {
+      color: $color-neutral-lighter;
+    }
+  }
+
+  &--inline {
+    height: 32px;
+    min-width: 32px;
+    padding: $button-padding-inline;
+  }
+
+  &--primary {
+    background-color: $color-primary-main;
+    border-color: $color-primary-main;
+    color: $color-layout-white;
+
+    &:hover:enabled {
+      background-color: $color-primary-light;
+      border-color: $color-primary-lighter;
+    }
+  }
+
+  &--secondary {
+    background-color: $color-secondary-main;
+    border-color: $color-secondary-main;
+    color: $color-layout-white;
+
+    &:hover:enabled {
+      background-color: $color-secondary-light;
+      border-color: $color-secondary-lighter;
+    }
+  }
+
+  &--tertiary {
+    background-color: $color-layout-white;
+    border-color: $color-layout-divider;
+    color: $color-neutral-darker;
+
+    &:hover:enabled {
+      border-color: $color-secondary-main;
+      color: $color-secondary-main;
+    }
+  }
+
+  &--dark {
+    background-color: $color-neutral-darkest;
+    border-color: $color-neutral-darkest;
+    color: $color-layout-white;
+
+    &:hover:enabled {
+      background-color: $color-neutral-darker;
+      border-color: $color-neutral-darker;
+    }
+  }
+
+  &--danger {
+    background-color: $color-error-main;
+    border-color: $color-error-main;
+    color: $color-layout-white;
+
+    &:hover:enabled {
+      background-color: $color-error-light;
+      border-color: $color-error-lighter;
+    }
+  }
+
+  &--reversed {
+    flex-direction: row-reverse;
+  }
+
+  &--padded {
+    padding-left: $button-padding-padded;
+    padding-right: $button-padding-padded;
+  }
+
+  .button__icon {
+    max-width: $icon-size;
+    font-size: $icon-size;
+    line-height: inherit;
+    display: inline;
+
+    &.has-text {
+      margin-right: 6px;
+    }
+
+    &--reversed.has-text {
+      margin-right: 0;
+      margin-left: 6px;
+    }
+  }
+}
+
+.is_registering {
+  animation: rotating 2s linear infinite;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

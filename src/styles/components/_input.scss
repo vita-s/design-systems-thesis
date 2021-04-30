@@ -1,0 +1,119 @@
+.input-wrapper {
+  width: $input-width;
+
+  &--full-width {
+    width: 100%;
+  }
+
+  &__legend {
+    margin-top: 4px;
+    color: $color-neutral-main;
+
+    &--accessibility {
+      color: $color-neutral-darkest;
+    }
+  }
+}
+
+.input-field {
+  border-radius: calc(#{$input-border-radius} + #{$input-border-width});
+  border: #{$input-border-width} solid $color-layout-divider;
+  height: 40px;
+  width: inherit;
+
+  &:focus-within {
+    border-color: $color-secondary-main;
+  }
+
+  &.input-field--wrong-value {
+    border-color: $color-error-main;
+  }
+
+  &.input-field--disabled {
+    background-color: $color-layout-card-background;
+
+    input.form-control:disabled {
+      color: $color-neutral-main;
+    }
+
+    .input-field__input,
+    .input-field__icon,
+    .input-field__icon-wrapper {
+      background-color: $color-layout-card-background !important;
+      pointer-events: none;
+    }
+  }
+
+  .input-field__segment {
+    background-color: $color-layout-white;
+    border: none;
+  }
+
+  .input-field__icon-wrapper {
+    padding-left: 1px;
+    border-radius: 2px;
+    background-color: $color-layout-white;
+
+    &--clickable {
+      cursor: pointer;
+    }
+  }
+
+  .input-field__input {
+    height: auto;
+    color: $color-neutral-darkest;
+    padding: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &--regular {
+      font-size: inherit;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &::placeholder {
+      color: $color-neutral-lighter;
+    }
+  }
+
+  .input-field__icon {
+    color: $color-neutral-lighter;
+    width: inherit;
+    margin-right: 8px;
+    padding: 0;
+  }
+
+  .input-field__text-icon {
+    font-style: normal;
+    border-radius: $input-border-radius;
+  }
+}
+
+.input-error-message {
+  width: 100%;
+  margin-top: 0.25rem;
+  color: $color-error-main;
+}
+
+.input-success {
+  .input-field {
+    border-color: $color-success-main;
+
+    .input-field__icon {
+      color: $color-success-main;
+    }
+  }
+}
+
+.input-error {
+  .input-field {
+    border-color: $color-error-main;
+
+    .input-field__icon {
+      color: $color-error-main;
+    }
+  }
+}

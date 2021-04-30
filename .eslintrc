@@ -1,0 +1,21 @@
+{
+  "root": true,
+  "env": {
+    "jest": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:vue/recommended",
+    "@vue/prettier",
+    "@vue/typescript"
+  ],
+  "rules": {
+    "vue/attribute-hyphenation": 0
+  },
+  "plugins": [
+    "html"
+  ],
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser"
+  }
+}

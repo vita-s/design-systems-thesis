@@ -1,0 +1,36 @@
+.dialog {
+  color: $color-neutral-darkest;
+
+  .modal-header,
+  .modal-footer,
+  .modal-body {
+    padding: 1rem;
+  }
+
+  .modal-header .close {
+    color: $color-neutral-lighter;
+    font-weight: 300;
+    opacity: 1;
+    font-size: 28px;
+  }
+
+  .modal-body {
+    @extend %subtitle;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .modal-title {
+    @extend %subsection-title;
+  }
+
+  .modal-body + .modal-footer {
+    padding-top: 40px;
+  }
+
+  @media (min-width: 576px) {
+    .modal-dialog {
+      max-width: 560px;
+    }
+  }
+}

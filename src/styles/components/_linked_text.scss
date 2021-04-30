@@ -1,0 +1,86 @@
+.linked-text {
+  color: $color-secondary-main;
+  cursor: pointer;
+
+  &:not(.button) {
+    height: 16px;
+  }
+
+  &:hover {
+    color: $color-secondary-light;
+    text-decoration: none;
+  }
+
+  &:disabled,
+  &[disabled] {
+    color: $color-neutral-main;
+    pointer-events: none;
+  }
+
+  .link__icon {
+    max-width: 16px;
+    font-size: 14px;
+    line-height: inherit;
+    margin-right: 5px;
+    vertical-align: text-bottom;
+  }
+
+  // disables bootstrap styles
+  &:not([href]):not([tabindex]) {
+    color: $color-secondary-main;
+
+    &:hover {
+      color: $color-secondary-light;
+    }
+
+    &:disabled,
+    &[disabled] {
+      color: $color-neutral-main;
+    }
+  }
+
+  &[role='button'] {
+    &:hover {
+      color: $color-layout-white !important;
+    }
+
+    &.button--primary {
+      color: $color-layout-white !important;
+    }
+
+    &.button--secondary {
+      color: $color-layout-white !important;
+    }
+
+    &.button--dark {
+      color: $color-layout-white !important;
+    }
+
+    &.button--tertiary {
+      color: $color-neutral-darker !important;
+
+      &:hover:enabled {
+        color: $color-secondary-main !important;
+      }
+
+      &[disabled] {
+        border-color: $color-layout-divider;
+      }
+    }
+
+    &[disabled] {
+      background-color: $color-neutral-lightest;
+      border-color: $color-neutral-lightest;
+      color: $color-neutral-main !important;
+    }
+  }
+}
+
+// disables default button styles
+button.linked-text {
+  padding: 0;
+  border: none;
+  background: transparent;
+  outline: 0;
+  box-shadow: none;
+}

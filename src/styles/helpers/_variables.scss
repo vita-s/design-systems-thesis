@@ -1,0 +1,97 @@
+/*****************************************/
+/*          New UI Colors                */
+/*****************************************/
+
+// Please keep consistency with the story
+// src/stories/02-foundations/01-colors.stories.mdx
+
+$color-primary-darkest: #4d2600;
+$color-primary-darker: #884500;
+$color-primary-dark: #c46400;
+$color-primary-main: #ff8300;
+$color-primary-light: #ffba69;
+$color-primary-lighter: #ffe3c4;
+$color-primary-lightest: #fff9f2;
+
+$color-secondary-darkest: #00264d;
+$color-secondary-darker: #004588;
+$color-secondary-dark: #0366c4;
+$color-secondary-main: #1890ff;
+$color-secondary-light: #78c2ff;
+$color-secondary-lighter: #c9e6ff;
+$color-secondary-lightest: #f2f9ff;
+
+$color-error-darkest: #4d140f;
+$color-error-darker: #7c180e;
+$color-error-dark: #ac180a;
+$color-error-main: #db1c0a;
+$color-error-light: #f27468;
+$color-error-lighter: #fbc9c5;
+$color-error-lightest: #fff8f7;
+
+$color-success-darkest: #0f4d12;
+$color-success-darker: #186a1c;
+$color-success-dark: #26882b;
+$color-success-main: #3ea644;
+$color-success-light: #84d288;
+$color-success-lighter: #ccf0ce;
+$color-success-lightest: #f7fff8;
+
+$color-neutral-darkest: #4b4b4b;
+$color-neutral-darker: #707070;
+$color-neutral-main: #888;
+$color-neutral-lighter: #bfbfbf;
+$color-neutral-lightest: #e8e8e8;
+
+$color-layout-white: #fff;
+$color-layout-background: #f6fafc;
+$color-layout-card-background: #f5f5f5;
+$color-layout-divider: #d8d8d8;
+$color-layout-black: #000;
+
+// //----------------------------------*\
+// // MEDIA
+// //----------------------------------*/
+
+$very-small-device: 767px;
+$small-device: 768px;
+$medium-device: 992px;
+$large-device: 1200px;
+$extra-large-device: 2170px;
+
+// //----------------------------------*\
+// // CONTENT
+// //----------------------------------*/
+
+$grid-base: 8px;
+
+$button-border-width: 1px;
+$button-border-radius: 3px;
+$button-line-height: 16px;
+$button-padding-default: 12px - $button-border-width;
+$button-padding-inline: 8px - $button-border-width;
+$button-padding-padded: 23px;
+
+$input-width: 240px;
+$input-heigth: 40px;
+$input-border-width: 1px;
+$input-border-radius: 3px;
+
+$menu-full-width: 250px;
+$menu-mini-width: 80px;
+$menu-mobile-width: 280px;
+$menu-mobile-width-offset: 300px;
+
+$header-height: 65px;
+
+$filters-width: 370px;
+$filters-mobile-width-offset: 390px;
+$sidebar-width: 230px;
+
+$colors: (
+  primary: $color-primary-main,
+  secondary: $color-secondary-main,
+  success: $color-success-main,
+  error: $color-error-main,
+  neutral: $color-neutral-main
+);

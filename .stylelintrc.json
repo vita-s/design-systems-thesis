@@ -1,0 +1,27 @@
+{
+  "extends": "stylelint-config-sass-guidelines",
+  "ignoreFiles": ["src/styles/vendors/**/*"],
+  "rules": {
+    "order/properties-alphabetical-order": null,
+    "max-nesting-depth": null,
+    "selector-class-pattern": null,
+    "selector-no-qualifying-type": null,
+    "selector-max-compound-selectors": null,
+    "function-parentheses-space-inside": "never-single-line",
+    "declaration-property-value-disallowed-list": {
+      "/^border(-(top|right|bottom|left))*$/": ["0"]
+    },
+    "selector-pseudo-element-no-unknown": [
+      true,
+      {
+        "ignorePseudoElements": ["v-deep"]
+      }
+    ],
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreSelectors": [":export", ":import"]
+      }
+    ]
+  }
+}

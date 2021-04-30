@@ -1,0 +1,109 @@
+/* Raster grid subsystem (rsms.me/raster) */
+.plankton-grid {
+  --grid-tc: repeat(24, 1fr);
+  --grid-cs: 1; /* column start */
+  --grid-ce: -1; /* column end */
+  display: grid;
+  grid-template-columns: var(--grid-tc);
+  grid-column-gap: 8px; /* gutter */
+}
+
+/* .plankton-cell -- cell or column */
+.plankton-grid > .plankton-cell {
+  display: block;
+  appearance: none;
+}
+
+@mixin cell-rules($i, $postfix) {
+  .plankton-grid[columns#{$postfix}='#{$i}'] {
+    --grid-tc: repeat(#{$i}, 1fr);
+  }
+
+  .plankton-grid > .plankton-cell[span#{$postfix}^='#{$i}'] {
+    --grid-cs: #{$i};
+  }
+
+  .plankton-grid > .plankton-cell[span#{$postfix}$='+#{$i}'],
+  .plankton-grid > .plankton-cell[span#{$postfix}$='#{$i}'] {
+    --grid-ce: #{$i};
+  }
+
+  .plankton-grid > .plankton-cell[span#{$postfix}$='-#{$i}'] {
+    --grid-ce: #{$i + 1};
+  }
+}
+
+@mixin connect-vars($postfix) {
+  .plankton-grid > .plankton-cell[span#{$postfix}] {
+    grid-column-end: span var(--grid-ce);
+  }
+
+  .plankton-grid > .plankton-cell[span#{$postfix}*='+'],
+  .plankton-grid > .plankton-cell[span#{$postfix}*='-'],
+  .plankton-grid > .plankton-cell[span#{$postfix}*='..'] {
+    grid-column-start: var(--grid-cs);
+  }
+
+  .plankton-grid > .plankton-cell[span#{$postfix}*='-'],
+  .plankton-grid > .plankton-cell[span#{$postfix}*='..'] {
+    grid-column-end: var(--grid-ce);
+  }
+
+  .plankton-grid > .plankton-cell[span#{$postfix}='row'] {
+    grid-column: 1 / -1;
+  }
+}
+
+/* cell rules */
+@for $i from 1 through 24 {
+  @include cell-rules($i, '');
+
+  @media only screen and (max-width: 600px) {
+    @include cell-rules($i, -s);
+  }
+
+  @media only screen and (min-width: 1599px) {
+    @include cell-rules($i, -l);
+  }
+}
+
+/* connect-vars */
+@include connect-vars('');
+
+@media only screen and (max-width: 600px) {
+  @include connect-vars('-s');
+}
+
+@media only screen and (min-width: 1599px) {
+  @include connect-vars('-l');
+}
+
+/* .debug can be added to a .plankton-grid to visualize its effective cells */
+.plankton-grid.debug > * {
+  --color: rgba(248, 110, 91, 0.3);
+  background-image: linear-gradient(to bottom, var(--color) 0%, var(--color) 100%);
+}
+
+.plankton-grid.debug > :nth-child(6n + 2) {
+  --color: rgba(103, 126, 208, 0.3);
+}
+
+.plankton-grid.debug > :nth-child(6n + 3) {
+  --color: rgba(224, 174, 72, 0.3);
+}
+
+.plankton-grid.debug > :nth-child(6n + 4) {
+  --color: rgba(77, 214, 115, 0.3);
+}
+
+.plankton-grid.debug > :nth-child(6n + 5) {
+  --color: rgba(217, 103, 219, 0.3);
+}
+
+.plankton-grid.debug > :nth-child(6n + 6) {
+  --color: rgba(94, 204, 211, 0.3);
+}
+
+.plankton-grid.debug > :nth-child(6n + 7) {
+  --color: rgba(248, 110, 91, 0.3);
+}
